@@ -1,0 +1,37 @@
+This is an example application skeleton which utilizes the following components:
+
+node.js
+- http://nodejs.org
+
+html5 boilerplate
+- http://html5boilerplate.com/
+
+express
+- http://expressjs.com
+
+socket.io
+- http://socket.io
+
+mongoose, an orm for mongodb
+- http://github.com/LearnBoost/mongoose
+
+mongodb
+- http://www.mongodb.org/
+
+redis, for pub/sub functionality with socket.io
+- http://code.google.com/p/redis/ 
+
+underscore.js & backbone.js
+- http://github.com/documentcloud/backbone
+- http://github.com/documentcloud/underscore
+
+--
+
+Yeah, this shit is literally dripping with cool aid
+
+I built out a few models, controllers, views etc just to see the power.
+
+Any Questions:
+jonathan.soeder@gmail.com
+@soederpop
+http://jonathansoeder.com
