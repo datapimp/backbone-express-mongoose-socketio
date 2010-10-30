@@ -12,13 +12,13 @@
     %link{href:"css/style.css?v=2", rel:"stylesheet"}/
     %script{src:"js/libs/modernizr-1.6.min.js"}
   %body= body
-    %script{src:"//ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.js"}
-    :javascript
-      !window.jQuery && document.write(unescape('%3Cscript src="js/libs/jquery-1.4.2.js"%3E%3C/script%3E'))
+    %script{src:"http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.js"}
     %script{src:"js/plugins.js"}
-    %script{src:"js/script.js"}
-    %script{src:"js/profiling/yahoo-profiling.min.js"}
-    %script{src:"js/profiling/config.js"}
+    %script{src:"js/underscore-min.js"}
+    %script{src:"js/backbone-min.js"}
+    %script{src:"js/json.js"}
+    %script{src:"socket.io/socket.io.js"}
+    %script{src:"js/application.js"}
     :javascript
       var _gaq=[['_setAccount', 'UA-XXXXX-X'], ['_trackPageview']];
       (function(d, t) {
