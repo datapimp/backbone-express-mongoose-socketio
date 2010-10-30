@@ -31,3 +31,7 @@ if (!module.parent) {
 }
 
 var socket = io.listen(app);
+
+socket.on("connect", function(){
+  console.log('Connection on socket...');
+});

@@ -1,3 +1,3 @@
-var Project = Backbone.Model.extend({
+Application.models.Project = Backbone.Model.extend({
   
 });

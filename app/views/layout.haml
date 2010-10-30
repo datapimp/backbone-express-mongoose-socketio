@@ -12,12 +12,14 @@
     %link{href:"css/style.css?v=2", rel:"stylesheet"}/
     %script{src:"js/libs/modernizr-1.6.min.js"}
   %body= body
+    :javascript
+      WEB_SOCKET_SWF_LOCATION = "/WebSocketMain.swf";
     %script{src:"http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.js"}
     %script{src:"js/plugins.js"}
     %script{src:"js/underscore-min.js"}
     %script{src:"js/backbone-min.js"}
     %script{src:"js/json.js"}
-    %script{src:"socket.io/socket.io.js"}
+    %script{src:"js/socket.io.js"}
     %script{src:"js/application.js"}
     :javascript
       var _gaq=[['_setAccount', 'UA-XXXXX-X'], ['_trackPageview']];

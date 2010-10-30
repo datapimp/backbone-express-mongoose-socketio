@@ -1,3 +1,3 @@
-var Projects = Backbone.Collection.extend({
-  model : Project
+Application.collections.Projects = Backbone.Collection.extend({
+  model : Application.models.Project
 });
