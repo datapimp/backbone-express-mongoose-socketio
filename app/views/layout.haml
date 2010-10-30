@@ -11,11 +11,7 @@
     %link{href:"/apple-touch-icon.png", rel:"apple-touch-icon"}/
     %link{href:"css/style.css?v=2", rel:"stylesheet"}/
     %script{src:"js/libs/modernizr-1.6.min.js"}
-  %body
-    #container
-      %header
-      #main= body
-      %footer
+  %body= body
     %script{src:"//ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.js"}
     :javascript
       !window.jQuery && document.write(unescape('%3Cscript src="js/libs/jquery-1.4.2.js"%3E%3C/script%3E'))
