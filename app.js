@@ -7,7 +7,8 @@ var express = require('express'),
     redis: redis,
     app: app,
     mongoose : mongoose
-  });
+  }),
+  sys = require("sys");
 
 
 app.configure(function(){
@@ -32,6 +33,13 @@ if (!module.parent) {
 
 var socket = io.listen(app);
 
-socket.on("connect", function(){
-  console.log('Connection on socket...');
+socket.on("disconnect",function(){
+  
+});
+
+socket.on("connect", function(client){
+  sys.puts("We got a connection on the socket son");
+  redis.publish("socket-io:connection","client connected",function(err,reply){
+    sys.puts("Redis publish response", err, reply);
+  });
 });
