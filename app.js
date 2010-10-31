@@ -1,45 +1,11 @@
-var express = require('express'),
-  mongoose  = require("mongoose").Mongoose;
-  redis     = require("redis-client").createClient(),
-  io        = require("socket.io");
-  app       = module.exports = express.createServer(),
-  setup       = require("./lib/setup.js").setup({
-    redis: redis,
-    app: app,
-    mongoose : mongoose
-  }),
-  sys = require("sys");
+var Server = {},
+    express = require("express");
 
-
-app.configure(function(){
-	app.set('view engine','haml');
-    app.set('views', __dirname + '/app/views');
-    app.use(express.bodyDecoder());
-    app.use(express.methodOverride());
-    app.use(express.compiler({ src: __dirname + '/public', enable: ['less'] }));
-    app.use(app.router);
-    app.use(express.staticProvider(__dirname + '/public'));
+Server.setup = require("./lib/setup.js").setup({
+  redis: require("redis-client").createClient(),
+  app: express.createServer(),
+  mongoose : require("mongoose").Mongoose,
+  io : require("socket.io"),
+  express : express
 });
 
-app.get('/', function(req, res){
-    res.render('index.haml');
-});
-
-
-if (!module.parent) {
-    app.listen(3000);
-    console.log("Express server listening on port %d", app.address().port)
-}
-
-var socket = io.listen(app);
-
-socket.on("disconnect",function(){
-  
-});
-
-socket.on("connect", function(client){
-  sys.puts("We got a connection on the socket son");
-  redis.publish("socket-io:connection","client connected",function(err,reply){
-    sys.puts("Redis publish response", err, reply);
-  });
-});
