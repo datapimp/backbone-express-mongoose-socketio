@@ -3,8 +3,26 @@ Application.socket = {
   onConnect : function(){
     console.log('Connected to Socket');
   },
-  onMessage : function(message){
-    console.log('Received Message', message );
+  onMessage : function(p){
+    console.log('message', p );
+    
+    var message = JSON.parse(p),
+        channel = message.channel.split(/\:/).pop(),
+        data = message.message;
+        
+    if( data.match(/^\{|\[/) && data.match(/\}|\]$/) ){
+      try {
+        data = JSON.parse(data);
+      } catch(err){
+        data = message.message;
+      }
+    }
+    
+    console.log('Socket Message', channel, data, typeof(data) );
+    
+    if( Application.channels[channel] && typeof(Application.channels[channel]=="function") ){
+      Application.channels[channel](data);
+    }
   },
   onDisconnect : function(){
     console.log('Socket Disconnected');

@@ -1,7 +1,8 @@
 var Application = {
   models : {},
   collections : {},
-  util : {}
+  util : {},
+  channels : {}
 };
 
 //= require "application/models"

@@ -9,9 +9,8 @@ Server.setup = require("./lib/setup.js").setup({
   express : express,
   paths : {
     views :  __dirname + '/app/views',
-    root : __dirname + '/app/public',
+    root : __dirname + '/public',
     controllers : __dirname + '/app/controllers',
     models : __dirname + '/app/models' 
   }
 });
-
