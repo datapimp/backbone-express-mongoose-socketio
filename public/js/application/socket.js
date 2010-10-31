@@ -25,7 +25,7 @@ Application.socket = {
   connect : function(){
     var s = Application.socket.provider;
     
-    if(f.connected){
+    if(s.connected){
       return;
     }
     
