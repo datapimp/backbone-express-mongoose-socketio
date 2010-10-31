@@ -6,6 +6,12 @@ Server.setup = require("./lib/setup.js").setup({
   app: express.createServer(),
   mongoose : require("mongoose").Mongoose,
   io : require("socket.io"),
-  express : express
+  express : express,
+  paths : {
+    views :  __dirname + '/app/views',
+    root : __dirname + '/app/public',
+    controllers : __dirname + '/app/controllers',
+    models : __dirname + '/app/models' 
+  }
 });
 
