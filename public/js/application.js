@@ -51,6 +51,9 @@ Application.socket = {
     s.connect();
   }
 };
+Application.channels.notifications = function(data){
+  console.log('Notification Channel Called', data );
+};
 
 Application.run = function(){
   console.log('Running Application...');
