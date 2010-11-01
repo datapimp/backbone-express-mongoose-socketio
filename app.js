@@ -1,7 +1,9 @@
 require("./lib/underscore");
+require("./lib/inflection");
 
 var Server = {},
     express = require("express"),
+    path = require("path"),
     application_root = __dirname;
 
 global.Server = Server;
@@ -14,9 +16,9 @@ Server.setup = require("./lib/setup.js").setup({
   io : require("socket.io"),
   express : express,
   paths : {
-    views :  application_root + '/app/views',
-    root : application_root + '/public',
-    controllers : application_root + '/app/controllers',
-    models : application_root + '/app/models' 
+    views :  path.join(application_root,"app","views"),
+    root : path.join(application_root,"public"),
+    controllers : path.join(application_root,"app","controllers"),
+    models : path.join(application_root,"app","models")
   }
 });
