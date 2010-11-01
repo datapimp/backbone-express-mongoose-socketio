@@ -1,4 +1,4 @@
-module.exports.definition = function(){
+module.exports.define = function(){
   return {
       properties: ['first_name', 'last_name', 'email', 'updated_at'],
       indexes: ['id'],

@@ -1,5 +1,11 @@
+require("./lib/underscore");
+
 var Server = {},
-    express = require("express");
+    express = require("express"),
+    application_root = __dirname;
+
+global.Server = Server;
+Server.root = application_root;
 
 Server.setup = require("./lib/setup.js").setup({
   redis: require("redis-client").createClient(),
@@ -8,9 +14,9 @@ Server.setup = require("./lib/setup.js").setup({
   io : require("socket.io"),
   express : express,
   paths : {
-    views :  __dirname + '/app/views',
-    root : __dirname + '/public',
-    controllers : __dirname + '/app/controllers',
-    models : __dirname + '/app/models' 
+    views :  application_root + '/app/views',
+    root : application_root + '/public',
+    controllers : application_root + '/app/controllers',
+    models : application_root + '/app/models' 
   }
 });
