@@ -1,5 +1,4 @@
 require("./lib/underscore");
-require("./lib/inflection");
 
 var Server = {},
     express = require("express"),
