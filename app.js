@@ -7,10 +7,11 @@ var Server = {},
 
 global.Server = Server;
 Server.root = application_root;
+global.app = express.createServer();
 
 Server.setup = require("./lib/setup.js").setup({
-  redis: require("redis-client").createClient(),
-  app: express.createServer(),
+  redis: require("./lib/redis-client").createClient(),
+  app: app, 
   mongoose : require("mongoose").Mongoose,
   io : require("socket.io"),
   express : express,

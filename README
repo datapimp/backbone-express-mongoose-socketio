@@ -1,18 +1,18 @@
 This is an example application skeleton which utilizes the following components:
 
-node.js
+node.js ( Tested with 0.2.5 )
 - http://nodejs.org
 
 html5 boilerplate
 - http://html5boilerplate.com/
 
-express
+express ( Tested with 1.0.0 )
 - http://expressjs.com
 
-socket.io
+socket.io ( Tested with 0.6.1 ) 
 - http://socket.io
 
-mongoose, an orm for mongodb
+mongoose, an orm for mongodb ( tested with 0.0.3 )
 - http://github.com/LearnBoost/mongoose
 
 mongodb
@@ -32,6 +32,18 @@ Yeah, this shit is literally dripping with cool aid
 I built out a few models, controllers, views etc just to see the power.
 
 Any Questions:
-jonathan.soeder@gmail.com
+jonathan.soeder@gmail.com ( email or gchat )
 @soederpop
 http://jonathansoeder.com
+
+current snapshopt of my npm libraries:
+
+connect@0.3.0        =creationix =tjholowaychuk active installed latest remote
+express@1.0.0        =tjholowaychuk active installed latest remote
+haml@0.2.5           =creationix active installed latest remote
+mongodb@0.7.9        =christkv active installed latest remote
+mongoose@0.0.3       =nw =tmpvar active installed latest remote
+node-static@0.5.2    =cloudhead active installed remote
+npm@0.2.4-1          =isaacs active installed
+redis-client@0.3.5   =justin active installed latest remote
+socket.io@0.6.1      =Tim-Smart =rauchg active installed latest remote
