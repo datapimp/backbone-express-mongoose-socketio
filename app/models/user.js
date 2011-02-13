@@ -1,17 +1,11 @@
-module.exports.define = function(){
-  return {
-      properties: ['first_name', 'last_name', 'email', 'updated_at'],
-      indexes: ['id'],
-      getters: {
-          full_name: function(){ 
-              return this.first_name + ' ' + this.last_name;
-          }
-      },
-      methods: {
-          save: function(fn){
-              this.updated_at = new Date();
-              this.__super__(fn);
-          }
-      }
-  };
-}
+var mongoose = require("mongoose");
+var sys = require("sys");
+var schema = new mongoose.Schema({
+    name  :  { type: String, default: 'hahaha' }
+  , age   :  { type: Number, min: 18, index: true }
+  , bio   :  { type: String, match: /[a-z]/ }
+  , date  :  { type: Date, default: Date.now }
+ });
+
+mongoose.model('User', schema); 
+
